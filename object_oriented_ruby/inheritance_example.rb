@@ -1,4 +1,5 @@
 class Vehicle
+  attr_accessor :weight
   def initialize
     @speed = 0
     @direction = 'north'
@@ -18,12 +19,26 @@ class Vehicle
 end
 
 class Car < Vehicle
+  def initialize
+    super 
+    @fuel = "25mpg"
+    @make = "honda"
+    @model = "civic"
+  end
+
   def honk_horn
     puts "Beeeeeeep!"
   end
 end
 
 class Bike < Vehicle
+  def initialize
+    super 
+    @speed = 0
+    @type = "road"
+    @weight = 30
+  end
+
   def ring_bell
     puts "Ring ring!"
   end
@@ -35,4 +50,5 @@ p bike.accelerate
 p car.accelerate
 bike.ring_bell
 car.honk_horn
+p bike.weight
 

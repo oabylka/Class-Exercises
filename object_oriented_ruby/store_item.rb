@@ -4,7 +4,7 @@ class Motorcycle
 	#viewing data
 	attr_writer  :color
 	#changing data
-	attr_accessor :price, :color
+	attr_accessor :price, :color, :shelf_life
 	#both viewing and changing data
 
 	def initialize(input_hash)
@@ -24,6 +24,14 @@ class Motorcycle
 	end
 end
 
+class Food < Motorcycle
+	#attr_accessor :shelf_life
+	def initialize(input_hash)
+		super
+		@shelf_life = input_hash[:shelf_life]
+	end
+end
+
 motorcycle1 = Motorcycle.new(color: "ruby red", price: 5000, model: "monster", make: "ducati")
 p motorcycle1.make
 p motorcycle1.model
@@ -37,4 +45,12 @@ p motorcycle2.model
 p motorcycle2.price
 p motorcycle2.color
 # motorcycle3 = Motorcycle.new("forest green", 12000, "thruxton", "triumph")
+
+food_item = Food.new({color: "black", price: 9.99, model: "bread", make: "french", shelf_life: 1})
+p food_item.shelf_life
+
+
+
+
+
 
