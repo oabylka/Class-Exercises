@@ -1,0 +1,11 @@
+
+<br>
+<br>
+
+<% @peeps.each do |person| %>
+	First Name: <%= person[:first_name] %>
+	Last Name: <%= person[:last_name] %>
+	Account: <%= person[:acct_number] %>
+	Email: <%= person[:email] %>
+	<br />
+	<% end %>
