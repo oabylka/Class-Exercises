@@ -2,10 +2,20 @@
 <br>
 <br>
 
-<% @peeps.each do |person| %>
-	First Name: <%= person[:first_name] %>
-	Last Name: <%= person[:last_name] %>
-	Account: <%= person[:acct_number] %>
-	Email: <%= person[:email] %>
-	<br />
+
+<table style="width:100%">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th> 
+    <th>Account</th>
+    <th>Email</th>
+  </tr>
+  <% @peeps.each do |person| %>
+	<tr>
+	<td><%= person[:first_name] %></td>
+	<td><%= person[:last_name] %></td>
+	<td><%= person[:acct_number] %></td>
+	<td><%= person[:email] %></td>
+	</tr>
 	<% end %>
+</table>
