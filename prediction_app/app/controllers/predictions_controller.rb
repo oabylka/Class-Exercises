@@ -56,6 +56,7 @@ class PredictionsController < ApplicationController
 		]
 		@peeps.each do |person|
 			number = 10.times.map{rand(10)}.join
+			#rand.to_s[2..11]
 			person[:acct_number] = number
 		end
 
