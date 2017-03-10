@@ -6,17 +6,29 @@ class ParamsController < ApplicationController
 			end
 	end
 
-	def guess
-		@answer = 36
+	def form
+
+	end
+
+	def form_result
 		@guess = params[:guess]
-			if @guess.to_i>@answer
+		@answer = 36
+		@guess = params[:guess].to_i
+			if @guess>@answer
 				@message = "Nope, go lower!"
-			elsif @guess.to_i<@answer
+			elsif @guess<@answer
 				@message = "Nope go higher!"
 			else
 				@message = "That's right!"
 			end
 	end
+
+	# def form
+
+	# end
+	# def form_result
+	# 	p params
+	# end
 end
 
 
