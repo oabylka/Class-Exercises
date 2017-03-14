@@ -1,0 +1,13 @@
+<h1>Contact</h1>
+<div class="show_contact">
+<div>
+Name: <%= @contact.first_name %>
+<%= @contact.last_name %><br>
+Email: <%= @contact.email %><br>
+Phone Number: <%= @contact.phone %>
+</div>
+
+<%= link_to "Edit", "/contacts/#{@contact.id}/edit" %>
+<%= link_to "Delete Contact", "/contacts/#{@contact.id}", method: :delete %>
+
+</div>

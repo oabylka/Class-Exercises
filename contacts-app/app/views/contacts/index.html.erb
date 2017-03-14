@@ -1,0 +1,18 @@
+<h1>All Contacts</h1>
+	<% @contacts.each do |x| %>
+	<div class="row">
+		<div class="col-md-4">
+			<p>
+				<div id="contact">
+					<a href="/contacts/<%= x.id %>"><%= x.first_name %><%= x.last_name %></a>
+					</div>
+					<div>
+				<%= x.email %><br>
+				<%= x.phone %><br>
+					</div>
+			</p>
+			<%= link_to "Edit", "/contacts/#{x.id}/edit" %><br>
+			<%= link_to "Delete Contact", "/contacts/#{x.id}", method: :delete %>
+		</div>
+		</div>
+	<% end %>
