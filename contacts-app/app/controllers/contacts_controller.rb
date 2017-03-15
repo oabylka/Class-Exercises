@@ -33,6 +33,7 @@ class ContactsController < ApplicationController
 		input_phone = params[:phone]
 
 		contact = Contact.find_by(id: params[:id])
+		puts contact
 		@contact = contact.update(first_name: input_first_name, last_name: input_last_name, email: input_email, phone: input_phone)
 		redirect_to "/contacts/#{contact.id}"
 	end
