@@ -12,6 +12,10 @@ class Contact < ApplicationRecord
 		"+81 "+phone.to_s
 	end
 
+	def find_address(addy)
+		addy_array = Geocoder.coordinates(addy)
+	end
+
 #Class method vs. instance methods
 	# def self.find_john
 	# 	contacts = Contacts.all
