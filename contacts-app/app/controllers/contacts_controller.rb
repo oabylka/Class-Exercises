@@ -1,11 +1,21 @@
 class ContactsController < ApplicationController
 	def show
-		contact_id = params[:id]
-		@contact = Contact.find_by(id: contact_id)
+		contact = Contact.find_by(id: params[:id])
+		contact_user_id = contact.user_id
+
+		if current_user.id == contact_user_id
+			contact_id = params[:id]
+			@contact = Contact.find_by(id: contact_id)
+		else
+			flash[:danger] = "You can't see that contact!"
+			redirect_to "/"
+		end
 	end
 
 	def index
-		@contacts = Contact.all
+		if current_user
+			@contacts = current_user.contacts
+		end
 	end
 
 	def new
@@ -24,7 +34,7 @@ class ContactsController < ApplicationController
 
 		@contact = Contact.new(first_name: input_first_name, middle_name: input_middle_name, 
 			last_name: input_last_name, email: input_email, 
-			phone: input_phone, address: input_address)
+			phone: input_phone, address: input_address, user_id: current_user.id)
 
 		@contact.longitude = @contact.find_address(input_address)[0]
 		@contact.latitude = @contact.find_address(input_address)[1]

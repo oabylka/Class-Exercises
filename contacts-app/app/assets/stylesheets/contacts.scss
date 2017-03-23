@@ -2,19 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-	text-align:center;
-	color: blue;
+.contact {
+	width: 90%;
+	height: 200%;
+	margin-top: 10%;
 }
 
-div {
-	text-align:center;
+.well{
+	height:150px;
+	max-width: 270px;
 }
 
-#name {
-	color: blue;
-}
-
-.show_contact {
+.login {
 	text-align: center;
 }
