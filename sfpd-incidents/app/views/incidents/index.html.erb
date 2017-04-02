@@ -1,0 +1,10 @@
+<h1>Incidents in SF </h1>
+<% @incidents.each do |incident| %>
+
+<h2><%= incident["category"] %></h2><br>
+<%= incident["date"] %><br>
+<%= incident["descript"] %><br>
+<%= incident["address"] %><br>
+<p>
+</p>
+<% end %>

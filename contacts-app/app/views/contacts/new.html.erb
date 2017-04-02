@@ -1,5 +1,16 @@
 <h1>Add a new contact</h1>
 
+<% if @contact.errors.any? %>
+		<div class="red_price">
+			<h3><%= pluralize(@contact.errors.count, "error") %></h3>
+			<ul>
+			<% @contact.errors.full_messages.each do |error| %>
+			<li><%= error %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 <%= form_tag "/contacts", method: :post do %>
 	<div>
 	Contact name <input type="text" name="first_name">

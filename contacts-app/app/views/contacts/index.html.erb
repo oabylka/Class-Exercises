@@ -8,19 +8,21 @@
 				<% @contacts.each_slice(4) do |four| %>
 				<div class="row">
 					<% four.each do |contact| %>
-						<div class="col-md-3">
-							<div class="well">
-								<div class="contact">
-									<a href="/contacts/<%= contact.id %>"><%= contact.full_name%></a>
-									<%= contact.email %><br>
-									<%= contact.phone %><br>
-									<%= contact.address %><br>
-						
-									<%= link_to "Edit", "/contacts/#{contact.id}/edit" %>
-									<%= link_to "Delete Contact", "/contacts/#{contact.id}", method: :delete %>
+						<% if current_user.id == contact.user_id %>
+							<div class="col-md-3">
+								<div class="well">
+									<div class="contact">
+										<a href="/contacts/<%= contact.id %>"><%= contact.full_name%></a>
+										<%= contact.email %><br>
+										<%= contact.phone %><br>
+										<%= contact.address %><br>
+							
+										<%= link_to "Edit", "/contacts/#{contact.id}/edit" %>
+										<%= link_to "Delete Contact", "/contacts/#{contact.id}", method: :delete %>
+									</div>
 								</div>
 							</div>
-						</div>
+						<% end %>
 			<% end %>
 			</div>
 			<% end %>

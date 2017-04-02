@@ -10,5 +10,9 @@ class ApplicationController < ActionController::Base
 		redirect_to '/login' unless current_user
 	end	
 
+	def groups
+  	@groups = Group.all
+ 	end
+  	helper_method :groups
 
 end

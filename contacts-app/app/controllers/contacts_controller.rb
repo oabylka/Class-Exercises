@@ -13,9 +13,14 @@ class ContactsController < ApplicationController
 	end
 
 	def index
-		if current_user
-			@contacts = current_user.contacts
-		end
+		group_id = params[:group_id]
+			if group_id
+				@group = Group.find_by(id: group_id)
+				@contacts = @group.contacts
+			else
+				@contacts = []
+			end
+		@contacts = Contact.where(user_id: current_user.id)
 	end
 
 	def new
@@ -26,8 +31,6 @@ class ContactsController < ApplicationController
 		input_first_name = params[:first_name]
 		input_middle_name = params[:middle_name]
 		input_last_name = params[:last_name]
-		#input_long = Geocoder.coordinates(params[:address])[0]
-		#input_lat = Geocoder.coordinates(params[:address])[1]
 		input_address = params[:address]
 		input_email = params[:email]
 		input_phone = params[:phone]
@@ -39,7 +42,14 @@ class ContactsController < ApplicationController
 		@contact.longitude = @contact.find_address(input_address)[0]
 		@contact.latitude = @contact.find_address(input_address)[1]
 
-		@contact.save
+		
+		if @contact.save
+			flash[:success] = "Contact Created!"
+			redirect_to "/contacts/#{@contact.id}"
+		else
+			flash[:danger] = "Contact couldn't be created!"
+			render "new.html.erb"
+		end
 	end
 
 	def edit

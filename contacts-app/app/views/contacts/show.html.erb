@@ -11,7 +11,10 @@ Japanese number: <%= @contact.add_prefix %>
 <div>
 Updated on: <%= @contact.changed_time %>
 </div><br>
-
+Group: <% @contact.groups.each do |group| %>
+		<%= group.name %>
+		<% end %>
+<br>
 <%= link_to "Edit", "/contacts/#{@contact.id}/edit" %>
 <%= link_to "Delete Contact", "/contacts/#{@contact.id}", method: :delete %>
 
