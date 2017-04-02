@@ -1,10 +1,30 @@
-<h1>Incidents in SF </h1>
-<% @incidents.each do |incident| %>
+<h1>Weather</h1>
 
-<h2><%= incident["category"] %></h2><br>
-<%= incident["date"] %><br>
-<%= incident["descript"] %><br>
-<%= incident["address"] %><br>
+<%= form_tag "/forecasts", method: :get %>
+	City: <input type="text" name="city">
+	<br />
+	State: <input type="text" name="state">
+	<br />
+	<input type="submit" value="get weather">
+
+
+<h2>Location: <%=@weather["query"]["results"]["channel"]["location"]["city"] %></h2>
+<h2><%=@weather["query"]["results"]["channel"]["location"]["region"] %></h2>
 <p>
 </p>
+
+Current Conditions:
+<%=@current_conditions["date"] %><br>
+<%=@current_conditions["text"] %><br>
+<%=@current_conditions["temp"] %><br>
+<p>
+</p>
+Forecast:
+<% @five_forecast[0..5].each do |day| %>
+	Date: <%= day["date"] %><br>
+	High: <%= day["high"] %><br>
+	Low: <%= day["low"] %><br>
+	Description : <%= day["text"] %><br>
+	<p>
+	</p>
 <% end %>
