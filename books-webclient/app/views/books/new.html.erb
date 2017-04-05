@@ -1,0 +1,19 @@
+<h1>Create a new book</h2>
+
+<%= form_tag "/books", method: :post do %>
+	<div>
+	Book title: <input type="text" name="title">
+	</div>
+	<div>
+	Author: <input type="text" name="author">
+	</div>
+	<div>
+	Publisher: <input type="text" name="publisher">
+	</div>
+	<div>
+	Genre: <input type="text" name="genre">
+	</div>
+	<div>
+	<input type="submit" value="Save book">
+	</div>
+<%end%>
