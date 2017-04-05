@@ -1,4 +1,4 @@
-class BooksController < ApplicationController
+class Api::V2::BooksController < ApplicationController
 	def index
 		@books = Book.all
 	end
@@ -21,6 +21,9 @@ class BooksController < ApplicationController
 		@book = Book.find_by(id: params[:id])
 		@book.destroy!
 
+		#render :index
+		#OR
+		render json: {message: "Book #{params[:id]} was deleted."}
 	end
 
 	def update
