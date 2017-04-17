@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+	<title>JS exercise 2</title>
+</head>
+<body>
+
+<script>
+
+var i = 0
+for (i = 10; i>0; i--){
+	console.log(i);
+}
+console.log("Blastoff!")
+
+
+
+var numbers = [5, 23, 98, 234, 1, 0, 3, 177];
+sum = 0
+for (i in numbers) {
+	sum += numbers[i]
+}
+console.log(sum)
+
+
+for (var x=1; x<=100; x++) {
+	var z = 0;
+	if( x % 3 == 0 && x % 5 == 0){
+		console.log("fizzbuzz");
+		z = 1
+	}
+
+	if (x % 3 == 0 && x % 5 != 0) {
+		console.log("fizz");
+		z = 1;
+	}
+	if (x % 5 == 0 && x % 3 != 0) {
+		console.log("buzz");
+		z = 1;
+	}
+	if (!z) {
+		console.log(x);
+	}
+}
+
+</script>
+
+</body>
+
+</html>
