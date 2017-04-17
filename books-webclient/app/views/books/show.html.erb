@@ -5,3 +5,6 @@
 <%= @book["author"] %><br>
 <%= @book["publisher"] %><br>
 <%= @book["genre"] %><br>
+
+<%= link_to "Edit Book", "/books/#{@book['id']}/edit" %>
+<%= link_to "Delete Book", "/books/#{@book['id']}", method: :delete %>

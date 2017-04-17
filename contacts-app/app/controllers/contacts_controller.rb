@@ -51,7 +51,7 @@ class ContactsController < ApplicationController
 			render "new.html.erb"
 		end
 	end
-
+	
 	def edit
 		contact_id = params[:id]
 		@contact = Contact.find_by(id: contact_id)
