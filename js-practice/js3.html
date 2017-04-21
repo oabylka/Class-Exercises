@@ -1,0 +1,54 @@
+
+<script>
+
+function addNumbers(numOne, numTwo) {
+	return numOne+numTwo
+}
+
+var sum = addNumbers(2,3);
+console.log(sum);
+
+
+
+function average(numArray) {
+	var length = numArray.length
+	var total = 0;
+	for (var i = 0; i < numArray.length; i++) {
+		total += numArray[i];
+	}
+	average = total/length;
+	return average
+}
+var average = average([2,2,2])
+console.log(average);
+
+
+var book = {title: "Harry Potter", author: "J.K. Rowling", isbn: "F456352", pages: 679, publication_year: 2001};
+
+var books = [ 
+	{title: "Harry Potter", author: "J.K. Rowling", isbn: "F456352", pages: 679, publication_year: 2001},
+	{title: "Picture of Dorian Gray", author: "Oscar Wilde", isbn: "F7362273", pages: 145, publication_year: 1890}
+	];
+
+	books.push({title: "Farenheit 451", author: "Ray Bradbury", isbn: "F7362273", pages: 67, publication_year: 1953});
+
+	console.log(books);
+
+function printDetails(book) {
+	console.log(book["title"]);
+	console.log(book["author"]);
+	console.log(book["isbn"]);
+	console.log(book["pages"]);
+	console.log(book["publication_year"]);
+}
+
+var book = printDetails(book);
+
+
+</script>
+
+
+
+
+
+
