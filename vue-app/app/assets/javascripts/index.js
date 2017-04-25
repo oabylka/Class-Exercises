@@ -11,7 +11,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
     methods: {
     	addReview: function() {
-    		this.reviews.push(this.newReview)
+    		if (this.newReview != '') {
+	    		this.reviews.push(this.newReview);
+	    		this.newReivew = '';
+    		}
+    	},
+    	removeReview: function(task) {
+    		var index = this.reviews.indexOf(task);
+    		this.reviews.splice(index, 1);
     	}
     }
   });

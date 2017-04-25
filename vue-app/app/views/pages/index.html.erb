@@ -1,6 +1,6 @@
 <div id="app">
  	<ol>
- 		<li v-for="review in reviews">{{review}}</li>
+ 		<li v-for="review in reviews" v-on:click="removeReview(task)">{{review}}</li>
 
  	</ol>
  	<h2>Add new review</h2>
