@@ -2,10 +2,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var app = new Vue({
     el: '#app',
     data: {
-      reviews: [
-      	"Feed the dog", 
-      	"Feed the cat", 
-      	"Feed the kids"
+      reviews: [{
+      	text: "Feed the dog",
+      	rating: 5
+      	} 
+      	{
+      	text: "Feed the cat", 
+      	rating: 3
+      	}
+      	{
+      	text: "Feed the kids",
+      	rating: 4
+      	}
       ],
       newReview: ''
     },

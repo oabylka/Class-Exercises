@@ -1,0 +1,21 @@
+<div id="app">
+	<h2>Number of people: {{people.length}}</h2>
+	<div v-for="person in people">
+	<h3 v-on:click="showBio(person)">{{person.name}}</h3>
+	<p v-if="person.bioVisible">{{person.bio}}</p>
+	<button v-on:click="deletePerson(person)">Delete</button>
+
+</div>
+<!-- 
+	<p v-for="person in people" v-on:click="showBio(person)">{{person.name}}</p>
+	<p v-for="person in people" v-if="person.bioVisible">{{person.bio}}</p>
+ -->
+<div>
+	<h3> Add a New Peep</h3>
+
+	Name: <input type="text" v-model="newName">
+	<br>
+	Bio: <input type="text" v-model="newBio">
+	<br>
+	<button v-on:click="addPerson()">Add Person</button>
+</div>
