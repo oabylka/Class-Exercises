@@ -1,0 +1,16 @@
+<div id="app">
+
+	<h2 v- >Incomplete tasks: {{numberOutstanding()}}</h2>
+ 	<ol>
+ 		<div v-for="task in tasks">
+ 		<li v-on:click="markDone(task)" v-bind:class="{strike: task.completed}"> {{task.text}}</li>
+ 		</div>
+ 	</ol>
+ 	<h2>Add new task</h2>
+ 	Task: <input type="" v-model="newText">
+
+ 	<button v-on:click="addTask()">Add Task</button>
+ 	<p>
+ 	<button v-on:click="removeCompleted()">Delete Completed Tasks</button>
+ 	</p>
+</div>
