@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<ink rel="stylesheet" type="text/css" href="weather.css">
+</head>
+<body>
+<div id="app">
+Look up weather in: <input type="" v-model="userLocation">
+<button v-on:click="searchLocation()">Look Up The Weather</button>
+<br>
+<!-- <div v-for="weather in weather"> -->
+
+<h3>{{weather}}</h3>
+
+	<ul>
+ 		<div v-for="forecast in weather" v-bind:class="createStyle()">
+ 			<div>
+		 		 {{forecast.day}}
+		 		 {{forecast.date}}<br>
+		 		 High: {{forecast.high}}<br>
+		 		 Low: {{forecast.low}}<br>
+		 		 {{forecast.text}}
+		 		 <p>
+		 		 </p>
+ 			</div>
+ 		</div>
+ 	</ul>
+<!-- <h2>{{weather.query.results.channel.item.forecast.high}}</h2>
+<h2>{{weather.query.results.channel.item.forecast.low}}</h2> -->
+<!-- </div> -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="https://unpkg.com/vue@2.3.0"></script>
+<script type="text/javascript" src="weather.js"></script>
+</body>
+</html>

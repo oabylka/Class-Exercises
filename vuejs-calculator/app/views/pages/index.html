@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+
+<body>
+	<div id="calculator">
+		<div id="expression">
+			<!-- this is the variable that we are setting in the js file -->
+			{{expression}}
+		</div>
+
+		<button v-on:click="addToExpression(1)">1</button>
+		<button v-on:click="addToExpression(2)">2</button>
+		<button v-on:click="addToExpression(3)">3</button>
+		<br>
+		<button v-on:click="addToExpression(4)">4</button>
+		<button v-on:click="addToExpression(5)">5</button>
+		<button v-on:click="addToExpression(6)">6</button>
+		<br>
+		<button v-on:click="addToExpression(7)">7</button>
+		<button v-on:click="addToExpression(8)">8</button>
+		<button v-on:click="addToExpression(9)">9</button>
+		<br>
+		<button v-on:click="addToExpression(0)">0</button>
+		<button v-on:click="addToExpression('+')">+</button>
+		<button v-on:click="addToExpression('-')">_</button>
+		<br>
+		<button v-on:click="clear()">C</button>
+		<button v-on:click="addToExpression('*')">&times;</button>
+		<button v-on:click="addToExpression('/')">&divide;</button>
+		<br>
+		<button id="eq-button" v-on:click="evaluate()">=</button>
+	</div>
+
+</body>
+
+</html>

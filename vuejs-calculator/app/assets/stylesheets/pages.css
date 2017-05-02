@@ -1,0 +1,25 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#expression {
+	background-color: #ECECEC;
+	text-align: right;
+	font-weight: bold;
+	width: 150px;
+	padding: 20ps;
+	margin: 5px;
+
+}
+
+button {
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#eq-button {
+	width: 180px;
+}
