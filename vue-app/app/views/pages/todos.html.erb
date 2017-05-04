@@ -1,6 +1,11 @@
 <div id="app">
 
-	<h2 v- >Incomplete tasks: {{numberOutstanding()}}</h2>
+	<h2>Number of Incomplete tasks: {{numberOutstanding()}}</h2>
+	
+	<div v-for="filter in filters">
+		<button v-on:click="filterTasks(filter)">{{filter}}</button>
+	 </div>
+
  	<ol>
  		<div v-for="task in tasks">
  		<li v-on:click="markDone(task)" v-bind:class="{strike: task.completed}"> {{task.text}}</li>
