@@ -6,6 +6,7 @@ class Coin
 		coins = []
 		i = 0
 		while i < number do
+			if  i 
    			coins.push(1)
    			i +=1
 		end
@@ -32,4 +33,11 @@ RSpec.describe Coin do
     end
   end
 
+end
+-------------------
+for i in 0..5
+   if i > 2 then
+      break
+   end
+   puts "Value of local variable is #{i}"
 end
